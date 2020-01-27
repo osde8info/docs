@@ -7,7 +7,7 @@ export const meta = {
   description:
     'A list of limits and limitations that apply on the ZEIT Now platform.',
   editUrl: 'pages/docs/v2/platform/limits.mdx',
-  lastEdited: '2020-01-16T18:43:54.000Z'
+  lastEdited: '2020-01-27T20:34:48.000Z'
 }
 
 This page outlines all relevant limits and limitations present when using the ZEIT Now platform.
@@ -47,11 +47,15 @@ This section highlights two areas relating to pricing plans, **Usage Allowances*
 
 ## Logs
 
-Both log types - **Build Time** and **Runtime** - have differing behavior when it comes to storing logs.
+All log types - **Build Time**, **Edge Network**, and **Runtime** - have differing behavior when it comes to storing logs.
 
-During the [Build Step](/docs/v2/build-step), all logs are stored and persisted.
+During the [Build Step](/docs/v2/build-step), all logs are stored and **persisted**.
 
-For [Serverless Functions](/docs/v2/serverless-functions/introduction/), only logs from failed requests are persisted. All other logs are stored in memory only and are not persisted between page views. Each log output is **limited to 4kb**. For log outputs greater than 4kb, only the last 4kb will be retained.
+For [Edge Network requests](/docs/v2/network/regions-and-providers#automatic-edge-cdn), all logs are **not persisted**.
+
+For [Serverless Functions](/docs/v2/serverless-functions/introduction/), only logs from failed requests are **persisted**.
+
+All other logs are stored in memory only and are **not persisted** between page views. Each log output is **limited to 4kb**. For log outputs greater than 4kb, only the last 4kb will be retained.
 
 ## Environment Variables
 
